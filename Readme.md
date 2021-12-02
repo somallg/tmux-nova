@@ -12,7 +12,7 @@
 Add this line in your `.tmux.conf`
 
 ```bash
-set -g @plugin 'o0th/tmux-nova'
+set -g @plugin 'somallg/tmux-nova'
 ```
 
 Hit <kbd>Prefix</kbd> + <kbd>I</kbd> to fetch the plugin and source it.

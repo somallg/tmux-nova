@@ -73,11 +73,13 @@ for segment in "${segments_left[@]}"; do
   IFS=' ' read -r -a segment_colors <<< $segment_colors
   if [ "$segment_content" != "" ]; then
     if [ $nerdfonts = true ] && [ -n "$(tmux show-option -gqv status-left)" ]; then
-      tmux set-option -ga status-left "#[fg=${nerdfonts_color},bg=#${segment_colors[0]}]"
+      # tmux set-option -ga status-left "#[fg=${nerdfonts_color},bg=#${segment_colors[0]}]"
+      tmux set-option -ga status-left "#[fg=#cccccc,bg=#dddddd]"
       tmux set-option -ga status-left "$nerdfonts_left"
     fi
 
-    tmux set-option -ga status-left "#[fg=${segment_colors[1]},bg=${segment_colors[0]}]"
+    # tmux set-option -ga status-left "#[fg=${segment_colors[1]},bg=${segment_colors[0]}]"
+    tmux set-option -ga status-left "#[fg=#cccccc,bg=#dddddd]"
     tmux set-option -ga status-left "$(padding $padding)"
     tmux set-option -ga status-left "$segment_content"
     tmux set-option -ga status-left "$(padding $padding)"
